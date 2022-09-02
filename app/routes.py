@@ -37,3 +37,6 @@ def addUser():
 
 def verifyPassword(password):
     return len(password) >= 10
+
+def miFuncion():
+    return "hola"
