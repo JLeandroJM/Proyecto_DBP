@@ -37,18 +37,3 @@ def addUser():
 
 def verifyPassword(password):
     return len(password) >= 10
-
-
-@app.route("/users/delete/<username>")
-def deleteUser(username):
-    user = User.query.filter(User.username == username).first()
-
-    if user == None:
-        return "No user with that username"
-    
-    db.session.delete(user)
-    try:
-        db.session.commit()
-    except Exception as err:
-        return "Error during delete"
-    return "User deleted"
